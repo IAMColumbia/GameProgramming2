@@ -7,7 +7,11 @@ namespace ConsoleCommand
     /// </summary>
     public class GameComponent
     {
-        int X, Y;
+
+        protected int _X, _Y;
+
+        public int X { get { return _X; } protected set { _X = value; } }
+        public int Y { get { return _Y; } protected set { _Y = value; } }
 
         internal void MoveRight()
         {
@@ -35,7 +39,7 @@ namespace ConsoleCommand
 
         public string About()
         {
-            string about = string.Format("{0}:{1}", X, Y);
+            string about = string.Format("location: {0}:{1}", X, Y);
             return about;
         }
     }

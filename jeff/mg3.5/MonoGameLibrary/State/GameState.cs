@@ -10,6 +10,7 @@ namespace MonoGameLibrary.State
 {
     public interface IGameState
     {
+        void StateChanged(object sender, EventArgs e);
         GameState Value { get; }
         
     }
@@ -36,7 +37,7 @@ namespace MonoGameLibrary.State
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        internal protected virtual void StateChanged(object sender, EventArgs e)
+        public virtual void StateChanged(object sender, EventArgs e)
         {
             if (GameManager.State == this.Value)
                 Visible = Enabled = true;

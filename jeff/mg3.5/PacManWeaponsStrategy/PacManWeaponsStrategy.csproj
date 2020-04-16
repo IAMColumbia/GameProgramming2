@@ -41,18 +41,21 @@
     <Compile Include="food.cs" />
     <Compile Include="FoodManager.cs" />
     <Compile Include="Game1.cs" />
-    <Compile Include="GameConsolePacMan.cs" />
-    <Compile Include="MonoGamePacMan.cs" />
-    <Compile Include="PacMan.cs" />
-    <Compile Include="PacManController.cs" />
+    <Compile Include="PacManWWeapon.cs" />
+    <Compile Include="PacManWWeaponShoot.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RateLimitedShotManager.cs" />
+    <Compile Include="weapons\IProjectileWeapon.cs" />
+    <Compile Include="weapons\RateLimitedShotManger.cs" />
+    <Compile Include="weapons\Shot.cs" />
     <Compile Include="Weapon.cs" />
     <Compile Include="weapons\foodWeapon.cs" />
     <Compile Include="weapons\IDamageable.cs" />
     <Compile Include="weapons\IWeapon.cs" />
     <Compile Include="weapons\NoWeapon.cs" />
     <Compile Include="weapons\RedWeapon.cs" />
+    <Compile Include="weapons\ShotManager.cs" />
     <Compile Include="weapons\TealWeapon.cs" />
     <Compile Include="WeaponType.cs" />
   </ItemGroup>
@@ -69,6 +72,7 @@
     <Content Include="Content\pacmanSingle.png" />
     <Content Include="Content\PurpleGhost.png" />
     <Content Include="Content\RedGhost.png" />
+    <Content Include="Content\shot.png" />
     <Content Include="Content\TealGhost.png" />
     <Content Include="Icon.ico" />
   </ItemGroup>
@@ -76,6 +80,10 @@
     <MonoGameContentReference Include="Content\Content.mgcb" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MGPacManComponents\MGPacManComponents.csproj">
+      <Project>{6e3bbbc5-263f-4464-9b29-aaadd49d3bcb}</Project>
+      <Name>MGPacManComponents</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MonoGameLibrary\MonoGameLibrary.csproj">
       <Project>{aad7c5c6-aa67-45c6-8b7c-22906fa79e9e}</Project>
       <Name>MonoGameLibrary</Name>

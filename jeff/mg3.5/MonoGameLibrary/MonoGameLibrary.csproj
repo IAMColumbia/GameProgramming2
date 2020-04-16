@@ -47,6 +47,7 @@
     <Compile Include="Events\EventData.cs" />
     <Compile Include="GameComponents\Audio\SoundSimpleComponent.cs" />
     <Compile Include="GameComponents\Player\PlayerController.cs" />
+    <Compile Include="GameFiles\FileSystem.cs" />
     <Compile Include="Network\ClientInfo.cs" />
     <Compile Include="Network\GameClient.cs" />
     <Compile Include="Network\GameNetwork.cs" />
@@ -76,12 +77,6 @@
     <Compile Include="Util\ScoreService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="OpenTK">
-      <HintPath>$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\DesktopGL\OpenTK.dll</HintPath>
-    </Reference>
-    <Reference Include="NVorbis">
-      <HintPath>$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\DesktopGL\NVorbis.dll</HintPath>
-    </Reference>
     <Reference Include="MonoGame.Framework">
       <HintPath>$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\DesktopGL\MonoGame.Framework.dll</HintPath>
     </Reference>
@@ -119,9 +114,6 @@
     <Content Include="Content\Assets\XavierLuigi.png" />
     <Content Include="Content\Assets\XavierMario.PNG" />
     <Content Include="Content\SpriteMarker.png" />
-    <Content Include="OpenTK.dll.config">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <MonoGameContentReference Include="Content\Content.mgcb" />

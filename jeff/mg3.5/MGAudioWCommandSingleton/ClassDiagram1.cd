@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MGAudioWCommandSingleton.Commands.AudioCommand" BaseTypeListCollapsed="true">
+    <Position X="5" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAAAASAAAAAAAAAAAAAAIAAAEAAAAAAAAA=</HashCode>
+      <FileName>Commands\AudioCommand.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="ConsoleCommandWUndo.Command">
+    <Position X="3" Y="0.75" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAQAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Command.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MGAudioWCommandSingleton.AudioCommandProcessor">
+    <Position X="8.75" Y="2.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AhQCAAAggAAAAQQABIAEEAAAAAAAABAAAAAAAAAACBA=</HashCode>
+      <FileName>AudioCommandProcessor.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="ConsoleCommandWUndo.ICommand">
+    <Position X="0.5" Y="0.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ICommand.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ConsoleCommandWUndo.IAudioCommand">
+    <Position X="0.5" Y="2" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ICommand.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MGAudioWCommandSingleton.IAudioCommandProcessor">
+    <Position X="8.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AudioCommandProcessor.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="MGAudioWCommandSingleton.Commands.AudioSoundType">
+    <Position X="6.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAAAAAAAABAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Commands\AudioCommand.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="MGAudioWCommandSingleton.Commands.AudioCommandType">
+    <Position X="5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAQAAAACAAAAAAAAAAAAAAAAAAAAAAAgACAAAAAA=</HashCode>
+      <FileName>Commands\AudioCommand.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

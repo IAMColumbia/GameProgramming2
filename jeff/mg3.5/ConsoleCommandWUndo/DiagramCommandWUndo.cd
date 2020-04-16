@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ConsoleCommandWUndo.Command">
+    <Position X="9.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAQAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Command.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ConsoleCommandWUndo.ConsoleCommandProcessor">
+    <Position X="7" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAAAACAEAAEAAAAAAAAAAAAAABAAAACAAAAI=</HashCode>
+      <FileName>ConsoleCommandProcessor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ConsoleCommandWUndo.UndoCommand">
+    <Position X="9.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>UndoCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ConsoleCommandWUndo.Commands.MoveDownCommand" Collapsed="true">
+    <Position X="16.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Commands\MoveDownCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ConsoleCommandWUndo.Commands.UndoMoveDownCommand" Collapsed="true">
+    <Position X="13" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Commands\MoveDownCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ConsoleCommandWUndo.Commands.MoveLeftCommand" Collapsed="true">
+    <Position X="16.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Commands\MoveLeftCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ConsoleCommandWUndo.Commands.UndoMoveLeftCommand" Collapsed="true">
+    <Position X="13" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Commands\MoveLeftCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ConsoleCommandWUndo.Commands.MoveRightCommand" Collapsed="true">
+    <Position X="16.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Commands\MoveRightCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ConsoleCommandWUndo.Commands.UndoMoveRightCommand" Collapsed="true">
+    <Position X="11" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Commands\MoveRightCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ConsoleCommandWUndo.Commands.MoveUpCommand" Collapsed="true">
+    <Position X="16.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Commands\MoveUpCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ConsoleCommandWUndo.Commands.UndoMoveUpCommand" Collapsed="true">
+    <Position X="11" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Commands\MoveUpCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ConsoleCommand.GameComponent">
+    <Position X="5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAEAAAAAAAAAAAAAAAAIQAAAAAAAYAA=</HashCode>
+      <FileName>C:\Users\jeff_cvaw3qe\Documents\GitHub\GameProgramming2\jeff\mg3.5\ConsoleCommand\GameComponent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ConsoleCommandWUndo.Program" Collapsed="true">
+    <Position X="7" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ConsoleCommandWUndo.CommandWithUndo">
+    <Position X="14" Y="0.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAEAAAAAAAQAAAAAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CommandWUndo.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="ConsoleCommandWUndo.ICommand" Collapsed="true">
+    <Position X="7" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ICommand.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="ConsoleCommandWUndo.ICommandWithUndo" Collapsed="true">
+    <Position X="7" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ICommandWithUndo.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,70 @@
+{
+    "sprites": [
+        {
+            "Location": {
+                "X": 1.0,
+                "Y": 3.0
+            },
+            "Direction": {
+                "X": 0.0,
+                "Y": 0.0
+            },
+            "Speed": 0.0
+        },
+        {
+            "Location": {
+                "X": 2.0,
+                "Y": 2.0
+            },
+            "Direction": {
+                "X": 0.0,
+                "Y": 0.0
+            },
+            "Speed": 0.0
+        },
+        {
+            "Location": {
+                "X": 3.0,
+                "Y": 1.0
+            },
+            "Direction": {
+                "X": 0.0,
+                "Y": 0.0
+            },
+            "Speed": 0.0
+        },
+        {
+            "Location": {
+                "X": 4.0,
+                "Y": 0.0
+            },
+            "Direction": {
+                "X": 0.0,
+                "Y": 0.0
+            },
+            "Speed": 0.0
+        },
+        {
+            "Location": {
+                "X": 0.0,
+                "Y": -1.0
+            },
+            "Direction": {
+                "X": -1.0,
+                "Y": -1.0
+            },
+            "Speed": 0.0
+        },
+        {
+            "Location": {
+                "X": 1.0,
+                "Y": -1.0
+            },
+            "Direction": {
+                "X": 0.0,
+                "Y": -1.0
+            },
+            "Speed": 0.0
+        }
+    ]
+}

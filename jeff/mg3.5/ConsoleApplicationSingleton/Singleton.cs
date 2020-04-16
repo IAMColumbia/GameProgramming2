@@ -8,14 +8,18 @@ namespace ConsoleApplicationSingleton
 {
     public class Singleton
     {
+        //Private Static instance
         private static Singleton instance;
 
-        private Singleton() { }
+        //Private or Procted Constructor
+        protected Singleton() { }
 
+        //Accessible Public instance
         public static Singleton Instance
         {
             get
             {
+                //Lazy Load
                 if (instance == null)
                 {
                     instance = new Singleton();

@@ -5,16 +5,17 @@ using System.Threading.Tasks;
 
 namespace ConsoleCommand
 {
-    public class Command : ICommand
+    public abstract class Command : ICommand
     {
 
         public string CommandName;
 
         public Command()
         {
-
+            this.CommandName = "Base Command";
         }
 
+        //Will Execute command when implemeted by child class
         public virtual void Execute(GameComponent gc)
         {
             this.Log();
@@ -22,6 +23,7 @@ namespace ConsoleCommand
 
         protected virtual void Log()
         {
+            //Basic Command logs to console
             Console.WriteLine(string.Format("{0} executed.",CommandName));
         }
     }

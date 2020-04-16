@@ -37,6 +37,9 @@
   <PropertyGroup>
     <ApplicationIcon>Icon.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>MGCommand.Program</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Compile Include="Command.cs" />
     <Compile Include="CommandComponent.cs" />

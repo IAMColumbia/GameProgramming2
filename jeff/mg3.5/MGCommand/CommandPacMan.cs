@@ -47,8 +47,32 @@ namespace MGCommand
             //updateMoveTime = 300; //reset move time
             //TODO Should use aniamtion to go to a new point
             this.Location += (moveOnNextUpdate * this.spriteTexture.Width); // Move the width of one sprite for cell based games this should be the size of the cell
+
+            //rotate
+            UpdateRotateBasedOnDirecton(this.moveOnNextUpdate);
+
             //reset moveOnNextUpdae
             moveOnNextUpdate = Vector2.Zero;
+
+            
+        }
+
+        private void UpdateRotateBasedOnDirecton(Vector2 direction)
+        {
+            if (direction.Length() > 0)
+            {
+                //calculate angle in radians
+                float rotationAngle = (float)Math.Atan2(
+                        direction.X,
+                        direction.Y * -1);
+
+                //This converts angle back to degree and uses art facing left as 0 degreees
+                //Art that start sfacing left = rotationAngle - (float)(Math.PI / 2)
+                //right = 
+                //TODO add rotations in radians
+                this.Rotate = (float)MathHelper.ToDegrees(rotationAngle - (float)(Math.PI / 2));
+                
+            }
         }
 
         public void MoveDown()

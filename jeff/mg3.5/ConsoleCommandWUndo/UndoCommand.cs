@@ -7,7 +7,7 @@ using ConsoleCommand;
 
 namespace ConsoleCommandWUndo
 {
-    public class UndoCommand : Command
+    public abstract class UndoCommand : Command
     {
         public UndoCommand(CommandWithUndo command)
         {

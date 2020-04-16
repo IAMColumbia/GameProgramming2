@@ -27,7 +27,7 @@ namespace MonoGameLibrary.Particle
         private float rotationSpeed;
         public float RotationSpeed { get { return rotationSpeed; } set { rotationSpeed = value; } }
 
-        public bool IsActive { get { return this.elapsedTime < this.lifeTime; } }
+        public bool IsActive { get { return this.elapsedTime < this.lifeTime; } }   //Used as a Pooled object in a particle system
 
         public Particle()
         {
@@ -52,9 +52,9 @@ namespace MonoGameLibrary.Particle
         //The update for the function which will be called by a manager
         public void Update(float time)
         {
+            
             this.velocity += this.acceleration * time;
             this.position += this.velocity * time;
-
             this.rotation += this.rotationSpeed * time;
 
             this.elapsedTime += time;

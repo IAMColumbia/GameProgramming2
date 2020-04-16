@@ -2,12 +2,11 @@ using System;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
-
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using Microsoft.Xna.Framework.Storage;
 using Microsoft.Xna.Framework.Content;
 using StrategyPacMan.weapons;
+using MGPacManComponents.Pac;
 
 namespace PacManWeaponsStrategy
 {
@@ -21,12 +20,12 @@ namespace PacManWeaponsStrategy
         int xOffset;
         int yOffset;
         Game g;
-        MonoGamePacMan PacMan;
+        PacManWWeapon PacMan;
         
 
         SpriteBatch sb;
         
-        public FoodManager(Game game, MonoGamePacMan p)
+        public FoodManager(Game game, PacManWWeapon p)
             : base(game)
         {
             

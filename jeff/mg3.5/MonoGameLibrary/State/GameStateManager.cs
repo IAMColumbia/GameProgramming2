@@ -102,6 +102,7 @@ namespace MonoGameLibrary.State
             return (states.Contains(state));
         }
 
+        
         public GameState State
         {
             get { return (states.Peek()); }

@@ -4,7 +4,6 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using Microsoft.Xna.Framework.Storage;
 
 namespace MonoGameLibrary.Sprite
 {
@@ -19,6 +18,7 @@ namespace MonoGameLibrary.Sprite
         public float Speed; 
         public float Rotate;    //Rotation in degrees
         public SpriteEffects SpriteEffects;
+        public Color DrawColor;
         public Rectangle LocationRect { get { return locationRect; } set { locationRect = value; } }    //current location used for collision
                                                                              
         public Color[] SpriteTextureData;   //Arrat for Color Data used for collision
@@ -92,6 +92,9 @@ namespace MonoGameLibrary.Sprite
             
             //top left orgin
             this.Origin = Vector2.Zero;
+
+            //set default color to white
+            this.DrawColor = Color.White;
             
             //center orgin
             //this.Origin = new Vector2(this.spriteTexture.Width / 2, this.spriteTexture.Height / 2);
@@ -139,6 +142,7 @@ namespace MonoGameLibrary.Sprite
                              new Rectangle(0, 0, (int)(this.spriteTexture.Width * Scale),
                                  (int)(this.spriteTexture.Height * Scale)),
                              spriteTransform);
+                this.updateRectangeForDrawing();
             }
         }
 
@@ -147,7 +151,7 @@ namespace MonoGameLibrary.Sprite
             sb.Draw(spriteTexture,  
                 rectangle,
                 null,
-                Color.White,
+                this.DrawColor,
                 MathHelper.ToRadians(Rotate),
                 this.Origin,
                 SpriteEffects,
@@ -245,7 +249,7 @@ namespace MonoGameLibrary.Sprite
         /// </summary>
         /// <param name="OtherSprite"></param>
         /// <returns></returns>
-        public bool PerPixelCollision(Sprite OtherSprite)
+        public virtual bool PerPixelCollision(Sprite OtherSprite)
         {
             
             Color[] OtherSpriteColors;
@@ -276,7 +280,7 @@ namespace MonoGameLibrary.Sprite
         /// </summary>
         /// <param name="OtherSprite"></param>
         /// <returns></returns>
-        public virtual bool PerPixelCollision2(Sprite OtherSprite)
+        public virtual bool PerPixelCollisionWTansform(Sprite OtherSprite)
         {
             
             return IntersectPixels(this.spriteTransform, this.spriteTexture.Width,

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleCommandWUndo
 {
-    public class Command : ICommand
+    public abstract class Command : ICommand
     {
         public string CommandName;       //Name For logging
 

@@ -16,7 +16,9 @@ namespace MonoGameLibrary.Util
     {
         bool WasPressed(int playerIndex, InputHandler.ButtonType button, Keys keys);
         bool WasButtonPressed(int playerIndex, InputHandler.ButtonType button);
-        bool WasKeyPressed(Keys keys);
+        bool WasKeyPressed(Keys key);
+
+        bool HasReleasedKey(Keys key);
 
         KeyboardHandler KeyboardState { get; }
 
@@ -33,7 +35,7 @@ namespace MonoGameLibrary.Util
     /// This is a game component that implements GameComponent and IInuputHandler
     /// </summary>
     public partial class InputHandler
-        : Microsoft.Xna.Framework.GameComponent, IInputHandler
+        : Microsoft.Xna.Framework.GameComponent, IInputHandler, IGameComponent
     {
         //Local enum wraps xna buttons
         public enum ButtonType { A, B, Back, LeftShoulder, LeftStick, RightShoulder, RightStick, Start, X, Y }
@@ -152,6 +154,11 @@ namespace MonoGameLibrary.Util
         public bool WasKeyPressed(Keys keys)
         {
             return keyboard.WasKeyPressed(keys);
+        }
+
+        public bool HasReleasedKey(Keys key)
+        {
+            return keyboard.HasReleasedKey(key);
         }
 
         public KeyboardHandler KeyboardState
@@ -283,6 +290,8 @@ namespace MonoGameLibrary.Util
                     throw (new ArgumentException());
             }
         }
+
+        
     }
 
     public class KeyboardHandler //: IKeyboardHandler

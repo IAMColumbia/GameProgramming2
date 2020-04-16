@@ -10,11 +10,20 @@ namespace ConsoleCommandWUndo
     public class ConsoleCommandProcessor
     {
         bool playingGame = true;    //Bool used to loop unti Q is pressed
-        //Face Game Component
-        GameComponent fakeComponent = new GameComponent();
+
+
+
+        //Fake Game Component
+        public GameComponent FakeComponentReceiver { get; set; }
 
         //List of previously processed commands
-        Stack<ICommand> Commands = new Stack<ICommand>();
+        public Stack<ICommand> Commands { get; set; }
+
+        public ConsoleCommandProcessor()
+        {
+            FakeComponentReceiver = new GameComponent();
+            Commands = new Stack<ICommand>();
+        }
 
         public void Run()
         {
@@ -26,11 +35,11 @@ namespace ConsoleCommandWUndo
                 ProcessCommand(command);
 
                 //Update display from coponent
-                Console.WriteLine(fakeComponent.About());
+                Console.WriteLine(FakeComponentReceiver.About());
             }
         }
 
-        private void ProcessCommand(Command command)
+        public void ProcessCommand(Command command)
         {
             if (command != null)
             {
@@ -38,7 +47,7 @@ namespace ConsoleCommandWUndo
                 {
                     Commands.Push((ICommandWithUndo)command); //only push commands with undo to the stack
                 }
-                command.Execute(fakeComponent);
+                command.Execute(FakeComponentReceiver);
 
             }
             else

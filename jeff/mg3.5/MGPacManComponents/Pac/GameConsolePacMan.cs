@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MGPacManComponents.Pac
 {
-    class GameConsolePacMan : PacMan
+    public class GameConsolePacMan : PacMan
     {
         GameConsole console;
         public GameConsolePacMan()

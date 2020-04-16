@@ -42,6 +42,11 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Food\Food.cs" />
+    <Compile Include="Food\SuperFood.cs" />
+    <Compile Include="Ghost\GameConsoleGhost.cs" />
+    <Compile Include="Ghost\Ghost.cs" />
+    <Compile Include="Ghost\MonogameGhost.cs" />
     <Compile Include="Pac\GameConsolePacMan.cs" />
     <Compile Include="Pac\MonogamePacMan.cs" />
     <Compile Include="Pac\PacMan.cs" />
@@ -73,6 +78,7 @@
     <Content Include="Content\shot.png" />
     <Content Include="Content\TealGhost.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -5,7 +5,7 @@ using Microsoft.Xna.Framework.Audio;
 
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using Microsoft.Xna.Framework.Storage;
+//using Microsoft.Xna.Framework.Storage;
 using Microsoft.Xna.Framework.Content;
 
 namespace MonoGameLibrary.Util
@@ -24,7 +24,6 @@ namespace MonoGameLibrary.Util
 
         string GetGameConsoleText();
         void GameConsoleWrite(string s);    //writes text to the game console
-
     }
 
     public class GameConsole : Microsoft.Xna.Framework.DrawableGameComponent, IGameConsole
@@ -73,12 +72,10 @@ namespace MonoGameLibrary.Util
             this.ToggleConsoleKey = Keys.OemTilde;  //default key
             this.debugTextStartX = 400;     //Default locationX
             this.debugTextStartY = 0;       //Default locationY
-            
-
             this.debugTextOutput = new Dictionary<string, string>();
 
             this.gameConsoleState = GameConsoleState.Open;
-
+            this.outText = "";
            
             input = (InputHandler)game.Services.GetService(typeof(IInputHandler));
             //Make sure input service exsists if not lazily add one
@@ -99,7 +96,6 @@ namespace MonoGameLibrary.Util
 
         protected override void LoadContent()
         {
-
             try
             {
                 font = this.Game.Content.Load<SpriteFont>("content/Arial");
@@ -125,16 +121,12 @@ namespace MonoGameLibrary.Util
         /// to run.  This is where it can query for any required services and load content.
         /// </summary>
         public override void Initialize()
-        {
-            
-            
+        {   
             base.Initialize();
         }
 
         protected override void UnloadContent()
         {
-            
-
             base.UnloadContent();
         }
 
@@ -144,8 +136,6 @@ namespace MonoGameLibrary.Util
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         public override void Update(GameTime gameTime)
         {
-            
-            
             if(input.KeyboardState.HasReleasedKey(ToggleConsoleKey))
             {
                 this.ToggleConsole();   
@@ -190,28 +180,35 @@ namespace MonoGameLibrary.Util
             base.Draw(gameTime);
         }
 
+        string outText;
+        bool outTextDirty;
+        string[] current;
+        int offsetLines, offset, indexStart;
         public string GetGameConsoleText()
         {
-            string Text = "";
-
-            string[] current = new string[Math.Min(gameConsoleText.Count, MaxLines)];
-            int offsetLines = (gameConsoleText.Count / maxLines) * maxLines;
-            
-            int offest = gameConsoleText.Count - offsetLines;
-
-            int indexStart = offsetLines - (maxLines - offest);
-            if (indexStart < 0)
-                indexStart = 0;
-            
-            gameConsoleText.CopyTo(
-                indexStart, current, 0 , Math.Min(gameConsoleText.Count, MaxLines));
-
-            foreach (string s in current)
+            if (outTextDirty) //only get current line if outText may have changed
             {
-                Text += s;
-                Text += "\n";
+                outText = "";
+                current = new string[Math.Min(gameConsoleText.Count, MaxLines)];
+                offsetLines = (gameConsoleText.Count / maxLines) * maxLines;
+
+                offset = gameConsoleText.Count - offsetLines;
+
+                indexStart = offsetLines - (maxLines - offset);
+                if (indexStart < 0)
+                    indexStart = 0;
+
+                gameConsoleText.CopyTo(
+                    indexStart, current, 0, Math.Min(gameConsoleText.Count, MaxLines));
+
+                foreach (string s in current)
+                {
+                    outText += s;
+                    outText += "\n";
+                }
+                this.outTextDirty = true;
             }
-            return Text;
+            return outText;
         }
 
         /// <summary>
@@ -231,13 +228,25 @@ namespace MonoGameLibrary.Util
             debugTextOutput.Add(DebugKey, DebugValue); 
         }
 
+        string[] linesToAdd;
         /// <summary>
         /// Adds a line to the Debug Console
         /// </summary>
         /// <param name="s">String to add to the console</param>
         public void GameConsoleWrite(string s)
         {
-            gameConsoleText.Add(s);
+            //Add each line
+            linesToAdd = s.Split(Environment.NewLine.ToCharArray());
+            foreach (string line in linesToAdd)
+            {
+                //don't add empty lines
+                if (line != string.Empty)
+                {
+                    //Add lines but replace the new line otherwise we could have two
+                    gameConsoleText.Add(line.Replace(Environment.NewLine, ""));
+                }
+            }
+            this.outTextDirty = true;
         }
 
         //Console State

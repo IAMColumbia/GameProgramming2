@@ -19,16 +19,18 @@ namespace MGCommand
         KeyMap keyMap;
 
         //List of previously processed commands
-        Stack<ICommand> Commands = new Stack<ICommand>();
+        Stack<ICommand> Commands;
 
         Dictionary<string, GameComponent> componentMap;
 
-        CommandPacMan pac;
+        CommandPacMan pacCommandReciever;
 
         public object CommandWUndo { get; private set; }
 
         public CommandProcessor(Game game, GameComponent pac) : base (game)
         {
+            Commands = new Stack<ICommand>();
+
             input = (InputHandler)game.Services.GetService<IInputHandler>();
             if(input == null)
             {
@@ -44,7 +46,7 @@ namespace MGCommand
             keyMap = new KeyMap();
             componentMap = new Dictionary<string, GameComponent>();
 
-            this.pac = (CommandPacMan)pac;
+            this.pacCommandReciever = (CommandPacMan)pac;
         }
 
         public override void Update(GameTime gameTime)
@@ -92,7 +94,7 @@ namespace MGCommand
                         {
                             Commands.Push((ICommandWithUndo)command); //only push commands with undo to the stack
                         }
-                        command.Execute(pac);
+                        command.Execute(pacCommandReciever);
                     }
                     
                 }
@@ -104,18 +106,19 @@ namespace MGCommand
                 if (input.KeyboardState.IsHoldingKey(item.Key))
                 {
                     console.GameConsoleWrite(string.Format("onKeyDownMap Key held {0}", item.Value.ToString())); //Log key to console
-                    switch (item.Value)
+                    /*switch (item.Value)
                     {
+                        //nothing
                         
-                    }
+                    }*/
                 }
                 if (input.KeyboardState.HasReleasedKey(item.Key))
                 {
                     console.GameConsoleWrite(string.Format("onKeyDownMap Key released {0}", item.Value.ToString())); //Log key to console
-                    switch (item.Value)
+                    /*switch (item.Value)
                     {
-                       
-                    }
+                       //nothing 
+                    }*/
                 }
             }
 

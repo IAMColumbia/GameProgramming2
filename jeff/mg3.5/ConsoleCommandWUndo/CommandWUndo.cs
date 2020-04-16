@@ -7,7 +7,7 @@ using ConsoleCommand;
 
 namespace ConsoleCommandWUndo
 {
-    public class CommandWithUndo : Command, ICommandWithUndo
+    public abstract class CommandWithUndo : Command, ICommandWithUndo
     {
         GameComponent gc;                   //Refernece to game component
         public UndoCommand UndoCommand { get; set; }

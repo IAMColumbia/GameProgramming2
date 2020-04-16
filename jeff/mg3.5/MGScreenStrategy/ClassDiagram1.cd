@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Screenz.BaseGameState">
+    <Position X="3" Y="6" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAAAAAAAAAAAAAAAAABAAQAAAAAAAAgQ=</HashCode>
+      <FileName>GameStates\BaseGameState.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Screenz.PausedState" Collapsed="true">
+    <Position X="1" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAAAAAAAAAgAAAAAAAQAAAAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>GameStates\PausedState.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MGScreenStrategy.GameStates.ScreenStrategyGameStateManager">
+    <Position X="0.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAgAAAQAAAAA=</HashCode>
+      <FileName>GameStates\ScreenStrategyGameStateManager..cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Screenz.StartMenuState" Collapsed="true">
+    <Position X="1" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAACQ=</HashCode>
+      <FileName>GameStates\StartMenuState.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Screenz.TitleIntroState" Collapsed="true">
+    <Position X="1" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAgAAAAAAAAAAAAAAAgAAAAAAAAAAAAQ=</HashCode>
+      <FileName>GameStates\TitleIntoState.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Screenz.PlayingState" Collapsed="true">
+    <Position X="1" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYQAAAAAAAAAgAAAAAAAAAAAAAAAAYAAAACAAAAACQ=</HashCode>
+      <FileName>GameStates\PlayingState.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MGScreenStrategy.GameStates.HelpDiaglogState" Collapsed="true">
+    <Position X="1" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAABACAACAgAIAAAAAQAAAAAAEAAgAAAACAAAACQ=</HashCode>
+      <FileName>GameStates\HelpDiaglogState.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Screenz.DialogState" Collapsed="true">
+    <Position X="1" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAABACAACAgAIAAAAAQAAAAAAEAAgAAAACAAAACQ=</HashCode>
+      <FileName>GameStates\DialogState.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="MonoGameLibrary.State.GameState">
+    <Position X="3" Y="2.5" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="Screenz.IPausedState" Collapsed="true">
+    <Position X="3.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameStates\PausedState.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Screenz.IStartMenuState" Collapsed="true">
+    <Position X="3.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameStates\StartMenuState.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Screenz.ITitleIntroState" Collapsed="true">
+    <Position X="3.5" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameStates\TitleIntoState.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Screenz.IPlayingState" Collapsed="true">
+    <Position X="3.5" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameStates\PlayingState.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MGScreenStrategy.GameStates.IHelpDiaglogState" Collapsed="true">
+    <Position X="3.5" Y="13.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameStates\HelpDiaglogState.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Screenz.IDialogState" Collapsed="true">
+    <Position X="3.5" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameStates\DialogState.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="MonoGameLibrary.State.IGameState">
+    <Position X="5" Y="2.5" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Enum Name="Screenz.GameDialogStatus">
+    <Position X="5.5" Y="14.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACIAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>GameStates\DialogState.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XMLDTOMap>
+  <Sprite>
+    <Location>
+      <X>0</X>
+      <Y>-1</Y>
+    </Location>
+    <Direction>
+      <X>0</X>
+      <Y>0</Y>
+    </Direction>
+    <Speed>0</Speed>
+  </Sprite>
+  <Sprite>
+      <Location>
+        <X>1</X>
+        <Y>-1</Y>
+      </Location>
+      <Direction>
+        <X>0</X>
+        <Y>0</Y>
+      </Direction>
+      <Speed>0</Speed>
+    </Sprite>
+</XMLDTOMap>  
+
+

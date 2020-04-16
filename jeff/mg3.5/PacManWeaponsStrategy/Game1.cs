@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using MGPacManComponents.Pac;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using MonoGameLibrary.Util;
@@ -16,7 +17,8 @@ namespace PacManWeaponsStrategy
         InputHandler input;
         GameConsole console;
 
-        MonoGamePacMan PacMan;
+        //MonoGamePacManOLD PacMan;
+        PacManWWeaponShoot PacMan;
         FoodManager fm;
 
         public Game1()
@@ -32,7 +34,7 @@ namespace PacManWeaponsStrategy
             //console.ToggleConsole();
 
             //Game 
-            PacMan = new MonoGamePacMan(this);
+            PacMan = new PacManWWeaponShoot(this);
             PacMan.PacState = PacManState.Still;
             this.Components.Add(PacMan);
 

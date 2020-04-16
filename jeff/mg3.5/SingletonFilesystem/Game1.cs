@@ -1,8 +1,12 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using MonogameLibrary.GameFiles;
+using MonoGameLibrary.GameFiles;
 using System.IO;
+using System;
+using System.Collections.Generic;
+using MonoGameLibrary.Util;
+using MGPacManComponents.Pac;
 
 namespace SingletonFilesystem
 {
@@ -14,15 +18,57 @@ namespace SingletonFilesystem
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
-        
+        GameConsole console;
+
+        MonogamePacMan pac;
+        FoodManagerLoadFromText fm;
         
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
-            FileSystem.Instance.Path = Content.RootDirectory;
-           FileSystem.Instance.CreateTextFile("test.txt");
-            
+
+            console = new GameConsole(this);
+            this.Components.Add(console);
+
+            pac = new MonogamePacMan(this);
+            this.Components.Add(pac);
+
+            FileSystem.Instance.Path = "";
+            fm = new FoodManagerLoadFromText(this, pac, ".\\Content\\Level1.txt");
+            this.Components.Add(fm);
+
+            CreateKeyMap();
+        }
+
+        private void CreateKeyMap()
+        {
+            FileSystem.Instance.Path = "";
+            FileSystem.Instance.CreateTextFile("KeyMap.txt", InitKeyMap());
+        }
+
+        private string InitKeyMap()
+        {
+            Dictionary<string, string> keyMap = new Dictionary<string, string>();
+            keyMap.Add(Keys.W.ToString(), "Move Up");
+            keyMap.Add(Keys.Up.ToString(), "Move Up");
+            keyMap.Add(Keys.S.ToString(), "Move Down");
+            keyMap.Add(Keys.Down.ToString(), "Move Down");
+            keyMap.Add(Keys.A.ToString(), "Move Left");
+            keyMap.Add(Keys.Left.ToString(), "Move Left");
+            keyMap.Add(Keys.D.ToString(), "Move Right");
+            keyMap.Add(Keys.Right.ToString(), "Move Right");
+            keyMap.Add(Keys.Z.ToString(), "Undo");
+
+            string txt = "";
+
+            foreach(var pair in keyMap)
+            {
+                txt += string.Format("{0}\t{1}", pair.Key, pair.Value);
+                txt += "\n";
+            }
+            return txt;
+
         }
 
         /// <summary>
