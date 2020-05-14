@@ -64,7 +64,8 @@ namespace JSONOjbectMap
         {
             if (this.State == GhostManagerState.Loading)
             {
-                LoadGhostsFromJSON();
+                //LoadGhostsFromJSON();
+                LoadGhostsFromJSONWeb();
                 LoadGhostsFromXML();
                 SetupGhostsJSON();
                 SetupGhostsXML();
@@ -203,6 +204,15 @@ namespace JSONOjbectMap
                 this.Ghosts.Add(gs);
             }
             
+        }
+
+        private void LoadGhostsFromJSONWeb()
+        {
+            this.State = GhostManagerState.Loading;
+            JSONmap = jsonGhostParser.LoadFromJSONWeb("https://webapplicationgmweb20200422141932.azurewebsites.net/api/ghost");
+
+            //Sprite test2 = JsonUtility.FromJson<Sprite>("{\"Location\": {\"X\": \"100\",\"Y\": \"100\"},\"Direction\": {\"X\": \"0\",\"Y\": \"1\"},\"Speed\":  \"20\"}");
+            this.State = GhostManagerState.Loaded;
         }
 
         private void LoadGhostsFromJSON()

@@ -1,9 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.Networking;
 
 namespace JSONOjbectMap
 {
@@ -24,6 +26,8 @@ namespace JSONOjbectMap
             sr.Close();
             
         }
+
+
 
         public string Json { get { return json; } }
         string json;
@@ -64,6 +68,40 @@ namespace JSONOjbectMap
             }
             return fileContents;
 
+        }
+
+        internal T LoadFromJSONWeb(string URL)
+        {
+            json = string.Empty;
+            UnityWebRequest www = UnityWebRequest.Get(URL);
+            www.SendWebRequest();
+
+            if (www.isNetworkError || www.isHttpError)
+            {
+                Debug.Log(www.error);
+            }
+            else
+            {
+                
+                byte[] results = www.downloadHandler.data;
+                json = www.downloadHandler.text;
+            }
+
+#if DEBUG
+            if (ShowDebugLog)
+            {
+                Debug.Log($"LoadFromJSON:{json}");
+            }
+#endif
+            //var obj = Newtonsoft.Json.JsonConvert.DeserializeObject<T>(json);
+            var obj = JsonUtility.FromJson<T>(json);
+#if DEBUG
+            if (ShowDebugLog)
+            {
+                Debug.Log($"parsed:{obj.ToString()}");
+            }
+#endif
+            return obj;
         }
     }
 }

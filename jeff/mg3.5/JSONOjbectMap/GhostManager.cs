@@ -84,7 +84,8 @@ namespace JSONOjbectMap
             base.Initialize();
             if (this.State == GhostManagerState.Loading)
             {
-                LoadGhostsFromJSON();
+                //LoadGhostsFromJSON();
+                LoadGhostsFromWebJSON();
                 LoadGhostsFromXML();
                 SetupGhostsJSON();
                 SetupGhostsXML();
@@ -97,6 +98,7 @@ namespace JSONOjbectMap
             {
                 case GhostManagerState.Loading:
                     LoadGhostsFromJSON();
+                    //LoadGhostsFromWebJSON();
                     this.State = GhostManagerState.Loaded;
                     SetupGhostsJSON();
                     break;
@@ -235,6 +237,13 @@ namespace JSONOjbectMap
         {
             this.State = GhostManagerState.Loading;
             JSONmap = jsonGhostParser.LoadFromJSON("JSONMap.json");
+            this.State = GhostManagerState.Loaded;
+        }
+
+        private void LoadGhostsFromWebJSON()
+        {
+            this.State = GhostManagerState.Loading;
+            JSONmap = jsonGhostParser.LoadFromWebJSON();
             this.State = GhostManagerState.Loaded;
         }
 
